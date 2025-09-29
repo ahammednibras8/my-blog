@@ -1,8 +1,4 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  basePath: '/blog',
-  assetPrefix: '/blog',
-  reactStrictMode: true,
-};
+const nextConfig = {};
 
 export default nextConfig;
