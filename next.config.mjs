@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-//   basePath: "/blog",
-  assetPrefix: "https://my-blog-sepia-eight.vercel.app",
-  reactStrictMode: true,
+    basePath: "/blog",
+    reactStrictMode: true,
+    assetPrefix: "/blog",
 };
 
 export default nextConfig;
