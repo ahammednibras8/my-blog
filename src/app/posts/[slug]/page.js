@@ -1,13 +1,39 @@
 import { notFound } from "next/navigation";
 import { getPostBySlug, getAllPosts, markdownToHtml } from "../../../lib/posts";
 
+// Generate static params for SSG
 export function generateStaticParams() {
-    const posts = getAllPosts(); 
+    const posts = getAllPosts();
     return posts.map((post) => ({ slug: post.slug }));
 }
 
+// Generate dynamic metadata per post
+export async function generateMetadata({ params }) {
+    const { slug } = params;
+    const post = getPostBySlug(slug);
+
+    if (!post) return { title: "Post Not Found" };
+
+    return {
+        title: `${post.title} – The Story Log`,
+        description: post.description || post.excerpt || "What broke, how we fixed it, and the single principle learned that day.",
+        openGraph: {
+            title: `${post.title} – The Story Log`,
+            description: post.description || post.excerpt,
+            url: `https://ahammednibras.is-a.dev/posts/${slug}`,
+            type: "article",
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: `${post.title} – The Story Log`,
+            description: post.description || post.excerpt,
+        },
+    };
+}
+
+// Post page component
 export default async function Post({ params }) {
-    const { slug } = await params;
+    const { slug } = params;
     const post = getPostBySlug(slug);
 
     if (!post) notFound();
