@@ -13,7 +13,7 @@ export default function Home() {
           The Story Log
         </h1>
         <p className="mt-6 text-xl sm:text-2xl text-gray-600 dark:text-gray-300 leading-relaxed font-light">
-          What broke, how we fixed it, and the single principle I that day.
+          What broke, how we fixed it, and the single principle I learned that day.
         </p>
       </header>
 
