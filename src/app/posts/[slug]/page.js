@@ -9,7 +9,7 @@ export function generateStaticParams() {
 
 // Generate dynamic metadata per post
 export async function generateMetadata({ params }) {
-    const { slug } = params;
+    const { slug } = await params;
     const post = getPostBySlug(slug);
 
     if (!post) return { title: "Post Not Found" };
@@ -33,7 +33,7 @@ export async function generateMetadata({ params }) {
 
 // Post page component
 export default async function Post({ params }) {
-    const { slug } = params;
+    const { slug } = await params;
     const post = getPostBySlug(slug);
 
     if (!post) notFound();
