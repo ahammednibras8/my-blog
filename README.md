@@ -1,36 +1,16 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# The The Story Log: Technical Summary
 
-## Getting Started
+## Tech Stack & Badges
+[![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org/) [![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/) [![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/) [![Multi-Zone](https://img.shields.io/badge/Next.js-Multi--Zone-blueviolet?style=for-the-badge)](https://nextjs.org/docs/advanced-features/multi-zones) [![SSR](https://img.shields.io/badge/SSR-Server--Side--Rendering-orange?style=for-the-badge)](https://nextjs.org/docs/pages/building-your-application/rendering/server-side-rendering) [![Markdown](https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white)](https://daringfireball.net/projects/markdown/) [![Blog](https://img.shields.io/badge/My%20Blog-ff4088?style=for-the-badge&logo=readme&logoColor=white)](https://ahammednibras.is-a.dev/blog)
 
-First, run the development server:
+## Strategic Choices
+Every decision below serves the single goal of maximum performance with minimum maintenance (ZeroOps).
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. **Static Site Generation (SSG):** This is the core decision. Content is rendered to pure HTML/CSS at build-time. Result? **Instant load times, automatic SEO benefits, and zero runtime server cost or surprises.**
+2. **Multi-Zone Architecture:** Utilizing Next.js's ability to map this blog to a subdirectory (```/blog```) of the main portfolio domain (```ahammednibras.is-a.dev```). **This creates a unified, seamless user experience without requiring a monolithic codebase or complex routing at the Edge.**
+3. **Minimal Architecture:** The site is structurally simple (Index + Single Post View). This keeps the code clean, focused, and highly maintainable. **No bloated "cool tech" for the sake of complexity**.
+4. **Stack (Next.js + React):** Next.js handles routing and the SSG build process. React allows for clean component definition. **No extra abstractions; pure, practical, scalable code.**
+5. **Content Workflow (Markdown):** Posts are simple Markdown files decoupled from the application logic. This maximizes **Content Velocity**—writing the story is the only bottleneck.
+6. **Hosting (Vercel):** Optimized for Next.js SSG builds. Deployment is a Git push process that leverages a global CDN for distribution. **Reliable ZeroOps deployment, fully integrated with Multi-Zone setup.**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+> Last updated: 2025-10-01
